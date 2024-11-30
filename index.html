@@ -1,2 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Chinese Dude</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .column-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .column {
+            width: 100%;
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        .column h2 {
+            text-align: center;
+            color: #555;
+            border-bottom: 2px solid #888;
+            padding-bottom: 10px;
+        }
+        .column-item {
+            margin-bottom: 5px;
+            display: flex;
+        }
+        .column-item-number {
+            font-weight: bold;
+            margin-right: 10px;
+            color: #666;
+        }
 
-<h1> Hello </h1>
+        /* Tablet View */
+        @media screen and (min-width: 768px) {
+            .column {
+                width: 45%;
+            }
+        }
+
+        /* Desktop View */
+        @media screen and (min-width: 1024px) {
+            .column {
+                width: 22%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>The Chinese Dude</h1>
+    
+    <div class="column-container">
+        <div class="column">
+            <h2>Best Chinese Restaurants in North America</h2>
+            <div class="column-item"><span class="column-item-number">1.</span> Din Tai Fung (Multiple Locations)</div>
+            <div class="column-item"><span class="column-item-number">2.</span> Mission Chinese Food (San Francisco)</div>
+            <div class="column-item"><span class="column-item-number">3.</span> Momofuku (New York)</div>
+            <div class="column-item"><span class="column-item-number">4.</span> Hakkasan (Las Vegas)</div>
+            <div class="column-item"><span class="column-item-number">5.</span> Mott 32 (Vancouver)</div>
+            <div class="column-item"><span class="column-item-number">6.</span> Little Sheep Hot Pot (Multiple Locations)</div>
+            <div class="column-item"><span class="column-item-number">7.</span> Nice Day Chinese Restaurant (Montreal)</div>
+            <div class="column-item"><span class="column-item-number">8.</span> China Chilcano (Washington DC)</div>
+            <div class="column-item"><span class="column-item-number">9.</span> HaiDiLao Hot Pot (Multiple Locations)</div>
+            <div class="column-item"><span class="column-item-number">10.</span> Xi'an Famous Foods (New York)</div>
+            <div class="column-item"><span class="column-item-number">11.</span> Chef's Special Cocktail Bar (Toronto)</div>
+            <div class="column-item"><span class="column-item-number">12.</span> Bao Bei Chinese Brasserie (Vancouver)</div>
+            <div class="column-item"><span class="column-item-number">13.</span> Mr. Wong (San Francisco)</div>
+            <div class="column-item"><span class="column-item-number">14.</span> Chili House (San Francisco)</div>
+            <div class="column-item"><span class="column-item-number">15.</span> Yank Sing (San Francisco)</div>
+            <div class="column-item"><span class="column-item-number">16.</span> State Bird Provisions (San Francisco)</div>
+            <div class="column-item"><span class="column-item-number">17.</span> NYC Dumpling House (New York)</div>
+            <div class="column-item"><span class="column-item-number">18.</span> Dragon Beaux (San Francisco)</div>
+            <div class="column-item"><span class="column-item-number">19.</span> 8ASIAN (Washington DC)</div>
+            <div class="column-item"><span class="column-item-number">20.</span> Lunar Cafe (Seattle)</div>
+        </div>
+
+        <div class="column">
+            <h2>Top Rated Chinese Nannies in North America</h2>
+            <div class="column-item"><span class="column-item-number">1.</span> Jennifer Chen (San Francisco Bay Area)</div>
+            <div class="column-item"><span class="column-item-number">2.</span> Emily Wong (Vancouver)</div>
+            <div class="column-item"><span class="column-item-number">3.</span> Lisa Liu (Los Angeles)</div>
+            <div class="column-item"><span class="column-item-number">4.</span> Sarah Zhang (Toronto)</div>
+            <div class="column-item"><span class="column-item-number">5.</span> Michelle Huang (New York City)</div>
+            <div class="column-item"><span class="column-item-number">6.</span> Karen Guo (Seattle)</div>
+            <div class="column-item"><span class="column-item-number">7.</span> Rebecca Lin (Chicago)</div>
+            <div class="column-item"><span class="column-item-number">8.</span> Angela Wu (Montreal)</div>
+            <div class="column-item"><span class="column-item-number">9.</span> Diana Lee (Houston)</div>
+            <div class="column-item"><span class="column-item-number">10.</span> Rachel Zhao (Boston)</div>
+            <div class="column-item"><span class="column-item-number">11.</span> Hannah Chen (Miami)</div>
+            <div class="column-item"><span class="column-item-number">12.</span> Sophia Wang (Atlanta)</div>
+            <div class="column-item"><span class="column-item-number">13.</span> Julia Liang (Washington DC)</div>
+            <div class="column-item"><span class="column-item-number">14.</span> Emma Xu (Denver)</div>
+            <div class="column-item"><span class="column-item-number">15.</span> Lily Zhang (San Diego)</div>
+            <div class="column-item"><span class="column-item-number">16.</span> Mia Liu (Austin)</div>
+            <div class="column-item"><span class="column-item-number">17.</span> Grace Chen (Philadelphia)</div>
+            <div class="column-item"><span class="column-item-number">18.</span> Ashley Wang (Phoenix)</div>
+            <div class="column-item"><span class="column-item-number">19.</span> Amanda Zhang (Dallas)</div>
+            <div class="column-item"><span class="column-item-number">20.</span> Olivia Wu (Portland)</div>
+        </div>
+
+        <div class="column">
+            <h2>Top Rated Chinese Handymen in North America</h2>
+            <div class="column-item"><span class="column-item-number">1.</span> David Chen (San Francisco)</div>
+            <div class="column-item"><span class="column-item-number">2.</span> Michael Wong (Vancouver)</div>
+            <div class="column-item"><span class="column-item-number">3.</span> Jack Liu (Los Angeles)</div>
+            <div class="column-item"><span class="column-item-number">4.</span> Eric Zhang (Toronto)</div>
+            <div class="column-item"><span class="column-item-number">5.</span> Robert Huang (New York City)</div>
+            <div class="column-item"><span class="column-item-number">6.</span> Thomas Guo (Seattle)</div>
+            <div class="column-item"><span class="column-item-number">7.</span> Steven Lin (Chicago)</div>
+            <div class="column-item"><span class="column-item-number">8.</span> Kevin Wu (Montreal)</div>
+            <div class="column-item"><span class="column-item-number">9.</span> James Lee (Houston)</div>
+            <div class="column-item"><span class="column-item-number">10.</span> Andrew Zhao (Boston)</div>
+            <div class="column-item"><span class="column-item-number">11.</span> Peter Chen (Miami)</div>
+            <div class="column-item"><span class="column-item-number">12.</span> Mark Wang (Atlanta)</div>
+            <div class="column-item"><span class="column-item-number">13.</span> Daniel Liang (Washington DC)</div>
+            <div class="column-item"><span class="column-item-number">14.</span> Ryan Xu (Denver)</div>
+            <div class="column-item"><span class="column-item-number">15.</span> Jason Zhang (San Diego)</div>
+            <div class="column-item"><span class="column-item-number">16.</span> Chris Liu (Austin)</div>
+            <div class="column-item"><span class="column-item-number">17.</span> Alex Chen (Philadelphia)</div>
+            <div class="column-item"><span class="column-item-number">18.</span> Justin Wang (Phoenix)</div>
+            <div class="column-item"><span class="column-item-number">19.</span> Brian Zhang (Dallas)</div>
+            <div class="column-item"><span class="column-item-number">20.</span> Tony Wu (Portland)</div>
+        </div>
+
+        <div class="column">
+            <h2>Top Chinese Influencers in North America</h2>
+            <div class="column-item"><span class="column-item-number">1.</span> Lexi Hahn (Food/Lifestyle)</div>
+            <div class="column-item"><span class="column-item-number">2.</span> Steven He (Comedy)</div>
+            <div class="column-item"><span class="column-item-number">3.</span> Michelle Phan (Beauty/Tech)</div>
+            <div class="column-item"><span class="column-item-number">4.</span> Nigahiga (Comedy)</div>
+            <div class="column-item"><span class="column-item-number">5.</span> Bretman Rock (Beauty/Lifestyle)</div>
+            <div class="column-item"><span class="column-item-number">6.</span> Mike Chen (Food/Travel)</div>
+            <div class="column-item"><span class="column-item-number">7.</span> Andrew Rea (Cooking)</div>
+            <div class="column-item"><span class="column-item-number">8.</span> Ryan Higa (Comedy)</div>
+            <div class="column-item"><span class="column-item-number">9.</span> Tiffany Ma (Beauty)</div>
+            <div class="column-item"><span class="column-item-number">10.</span> Eddie Huang (Food/Culture)</div>
+            <div class="column-item"><span class="column-item-number">11.</span> Anna Akana (Comedy/Film)</div>
+            <div class="column-item"><span class="column-item-number">12.</span> William Osman (Comedy/Tech)</div>
+            <div class="column-item"><span class="column-item-number">13.</span> David Choe (Art/Podcast)</div>
+            <div class="column-item"><span class="column-item-number">14.</span> Timothy DeLaGhetto (Comedy)</div>
+            <div class="column-item"><span class="column-item-number">15.</span> Joseph Grendel (Tech/Gaming)</div>
+            <div class="column-item"><span class="column-item-number">16.</span> Philip Wang (Comedy)</div>
+            <div class="column-item"><span class="column-item-number">17.</span> Wesley Chan (Comedy)</div>
+            <div class="column-item"><span class="column-item-number">18.</span> Wong Fu Productions (Film/Comedy)</div>
+            <div class="column-item"><span class="column-item-number">19.</span> Lisa Nguyen (Food)</div>
+            <div class="column-item"><span class="column-item-number">20.</span> Uncle Roger (Comedy/Food)</div>
+        </div>
+    </div>
+</body>
+</html>
