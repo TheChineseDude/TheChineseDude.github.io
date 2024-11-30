@@ -1,0 +1,25 @@
+{
+    // Instructions for contributing to the list:
+    // 1. Only add nannies with verifiable excellent references
+    // 2. Include the nanny's first name and primary service area
+    // 3. Do not include full personal information for privacy
+    // 4. Do not remove existing entries without consensus
+    // 5. Maintain the current ranking format
+    // 6. Spelling and capitalization matter
+    "nannies": [
+        {
+            "name": "Jennifer Chen",
+            "location": "San Francisco Bay Area"
+        },
+        {
+            "name": "Emily Wong",
+            "location": "Vancouver"
+        }
+        // Add more nannies here following the same structure
+        // Example: 
+        // {
+        //     "name": "New Nanny Name",
+        //     "location": "City, State/Province"
+        // }
+    ]
+}
