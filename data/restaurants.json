@@ -1,11 +1,4 @@
 {
-    // Instructions for contributing to the list:
-    // 1. Only add restaurants that are widely recognized or highly rated
-    // 2. Include the restaurant name and its primary location
-    // 3. Ensure the restaurant has significant presence or reputation in North America
-    // 4. Do not remove existing entries without consensus
-    // 5. Maintain the current ranking format
-    // 6. Spelling and capitalization matter
     "restaurants": [
         {
             "name": "Din Tai Fung",
@@ -15,11 +8,6 @@
             "name": "Mission Chinese Food", 
             "location": "San Francisco"
         }
-        // Add more restaurants here following the same structure
-        // Example: 
-        // {
-        //     "name": "New Restaurant Name",
-        //     "location": "City, State/Province"
-        // }
+     }
     ]
 }
