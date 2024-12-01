@@ -1,11 +1,4 @@
 {
-    // Instructions for contributing to the list:
-    // 1. Only add handymen with verifiable excellent reviews
-    // 2. Include the handyman's first name and primary service area
-    // 3. Do not remove existing entries without consensus
-    // 4. Ensure the handyman has proven skills and reliability
-    // 5. Maintain the current ranking format
-    // 6. Spelling and capitalization matter
     "handymen": [
         {
             "name": "David Chen",
@@ -15,11 +8,5 @@
             "name": "Michael Wong", 
             "location": "Vancouver"
         }
-        // Add more handymen here following the same structure
-        // Example: 
-        // {
-        //     "name": "New Handyman Name",
-        //     "location": "City, State/Province"
-        // }
     ]
 }
