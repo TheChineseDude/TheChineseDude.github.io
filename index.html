@@ -67,22 +67,22 @@
         // Configuration for JSON file paths
         const configs = [
             { 
-                url: '/data/restaurants.json', 
+                url: 'data/restaurants.json', 
                 title: 'Best Chinese Restaurants in North America',
                 key: 'restaurants'
             },
             { 
-                url: '/data/nannies.json', 
+                url: 'data/nannies.json', 
                 title: 'Top Rated Chinese Nannies in North America',
                 key: 'nannies'
             },
             { 
-                url: '/data/handymen.json', 
+                url: 'data/handymen.json', 
                 title: 'Top Rated Chinese Handymen in North America',
                 key: 'handymen'
             },
             { 
-                url: '/data/influencers.json', 
+                url: 'data/influencers.json', 
                 title: 'Top Chinese Influencers in North America',
                 key: 'influencers'
             }
@@ -122,7 +122,7 @@
 
                 document.getElementById('dynamic-columns').appendChild(columnEl);
             } catch (error) {
-                console.error(`Error loading ${config.url}:`, error);
+                alert(`Error loading ${config.url+error}:`);
             }
         }
 
