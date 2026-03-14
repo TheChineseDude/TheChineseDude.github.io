@@ -1,0 +1,46 @@
+{
+    "influencers_cn": [
+        {
+            "name": "小高姐的 Magic Ingredients",
+            "category": "美食",
+            "youtube": "https://www.youtube.com/@MagicIngredients",
+            "subscribers": "200万+"
+        },
+        {
+            "name": "老高与小茉 Mr & Mrs Gao",
+            "category": "知识/悬疑",
+            "youtube": "https://www.youtube.com/@laogao",
+            "subscribers": "600万+"
+        },
+        {
+            "name": "李子柒 Liziqi",
+            "category": "田园生活",
+            "youtube": "https://www.youtube.com/@cnliziqi",
+            "subscribers": "2000万+"
+        },
+        {
+            "name": "小Lin说 Xiao Lin Shuo",
+            "category": "财经/知识",
+            "youtube": "https://www.youtube.com/@xiaolinsays",
+            "subscribers": "100万+"
+        },
+        {
+            "name": "曼食慢语 Amanda Tastes",
+            "category": "美食",
+            "youtube": "https://www.youtube.com/@Amandatastes",
+            "subscribers": "100万+"
+        },
+        {
+            "name": "一条 YIT",
+            "category": "生活/纪录",
+            "youtube": "https://www.youtube.com/@yaboreyit",
+            "subscribers": "300万+"
+        },
+        {
+            "name": "火锅大王 HotPot King",
+            "category": "美食/文化",
+            "youtube": "https://www.youtube.com/@HotPotKing",
+            "subscribers": "50万+"
+        }
+    ]
+}
