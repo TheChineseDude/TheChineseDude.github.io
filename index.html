@@ -69,8 +69,21 @@
             color: #666;
         }
         .column-item {
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             display: flex;
+            align-items: baseline;
+        }
+        .social-links {
+            margin-left: 6px;
+            font-size: 0.8em;
+        }
+        .social-links a {
+            text-decoration: none;
+            margin-left: 4px;
+            color: #c0392b;
+        }
+        .social-links a:hover {
+            text-decoration: underline;
         }
         .column-item-number {
             font-weight: bold;
@@ -150,13 +163,23 @@
                     numberEl.textContent = `${index + 1}.`;
                     
                     const textEl = document.createTextNode(
-                        config.key === 'influencers' 
-                            ? `${item.name} (${item.category})` 
+                        config.key === 'influencers'
+                            ? `${item.name} (${item.category})`
                             : `${item.name} (${item.location})`
                     );
-                    
+
                     itemEl.appendChild(numberEl);
                     itemEl.appendChild(textEl);
+
+                    if (config.key === 'influencers' && (item.youtube || item.x)) {
+                        const linksEl = document.createElement('span');
+                        linksEl.className = 'social-links';
+                        let links = [];
+                        if (item.youtube) links.push(`<a href="${item.youtube}" target="_blank" rel="noopener">YT</a>`);
+                        if (item.x) links.push(`<a href="${item.x}" target="_blank" rel="noopener">X</a>`);
+                        linksEl.innerHTML = links.join(' ');
+                        itemEl.appendChild(linksEl);
+                    }
                     columnEl.appendChild(itemEl);
                 });
 

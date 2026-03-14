@@ -1,12 +1,64 @@
 {
     "influencers": [
         {
-            "name": "Lexi Hahn",
-            "category": "Food/Lifestyle"
+            "name": "Steven He",
+            "category": "Comedy",
+            "youtube": "https://www.youtube.com/@StevenHe",
+            "x": "https://x.com/TheStevenHe"
         },
         {
-            "name": "Steven He",
-            "category": "Comedy"
+            "name": "Alan Chikin Chow",
+            "category": "Comedy/Entertainment",
+            "youtube": "https://www.youtube.com/@AlanChikinChow",
+            "x": "https://x.com/AlanChikinChow"
+        },
+        {
+            "name": "The Fung Brothers",
+            "category": "Food/Culture",
+            "youtube": "https://www.youtube.com/user/FungBrosComedy",
+            "x": "https://x.com/fungbros"
+        },
+        {
+            "name": "Xiran Jay Zhao",
+            "category": "Culture/History",
+            "youtube": "https://www.youtube.com/@XiranJayZhao",
+            "x": "https://x.com/XiranJayZhao"
+        },
+        {
+            "name": "Linda Dong",
+            "category": "Comedy/Skits",
+            "youtube": "https://www.youtube.com/user/LeendaDProductions",
+            "x": "https://x.com/lindadong"
+        },
+        {
+            "name": "Jenn Im",
+            "category": "Fashion/Beauty",
+            "youtube": "https://www.youtube.com/user/clothesencounters",
+            "x": "https://x.com/imjennim"
+        },
+        {
+            "name": "CantoMando",
+            "category": "Comedy/Culture",
+            "youtube": "https://www.youtube.com/@CantoMando",
+            "x": "https://x.com/CantoMando"
+        },
+        {
+            "name": "Wengie",
+            "category": "Lifestyle/Music",
+            "youtube": "https://www.youtube.com/@Wengie",
+            "x": "https://x.com/Wengie"
+        },
+        {
+            "name": "Uncle Roger (Nigel Ng)",
+            "category": "Comedy/Food",
+            "youtube": "https://www.youtube.com/@mrnigelng",
+            "x": "https://x.com/MrNigelNg"
+        },
+        {
+            "name": "Lexi Hahn",
+            "category": "Food/Lifestyle",
+            "youtube": "",
+            "x": ""
         }
     ]
 }
