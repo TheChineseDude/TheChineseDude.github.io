@@ -134,10 +134,15 @@
                 title: 'Top Rated Chinese Handymen in North America',
                 key: 'handymen'
             },
-            { 
-                url: 'data/influencers.json', 
-                title: 'Top Chinese Influencers in North America',
+            {
+                url: 'data/influencers.json',
+                title: 'Top Chinese Influencers (English-Speaking)',
                 key: 'influencers'
+            },
+            {
+                url: 'data/influencers_cn.json',
+                title: '北美华人网红 (中文频道)',
+                key: 'influencers_cn'
             }
         ];
 
@@ -162,16 +167,20 @@
                     numberEl.className = 'column-item-number';
                     numberEl.textContent = `${index + 1}.`;
                     
-                    const textEl = document.createTextNode(
-                        config.key === 'influencers'
-                            ? `${item.name} (${item.category})`
-                            : `${item.name} (${item.location})`
-                    );
+                    let displayText;
+                    if (config.key === 'influencers') {
+                        displayText = `${item.name} (${item.category})`;
+                    } else if (config.key === 'influencers_cn') {
+                        displayText = `${item.name} (${item.category}) - ${item.subscribers}`;
+                    } else {
+                        displayText = `${item.name} (${item.location})`;
+                    }
+                    const textEl = document.createTextNode(displayText);
 
                     itemEl.appendChild(numberEl);
                     itemEl.appendChild(textEl);
 
-                    if (config.key === 'influencers' && (item.youtube || item.x)) {
+                    if ((config.key === 'influencers' || config.key === 'influencers_cn') && (item.youtube || item.x)) {
                         const linksEl = document.createElement('span');
                         linksEl.className = 'social-links';
                         let links = [];
@@ -199,7 +208,8 @@
                 restaurants: 'Restaurants',
                 nannies: 'Nannies',
                 handymen: 'Handymen',
-                influencers: 'Influencers'
+                influencers: 'Influencers (EN)',
+                influencers_cn: '网红 (中文)'
             };
 
             stat.innerHTML = `<div class="stat-number">${count}</div><div class="stat-label">${labels[key] || key}</div>`;
