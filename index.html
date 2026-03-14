@@ -35,6 +35,39 @@
             border-bottom: 2px solid #888;
             padding-bottom: 10px;
         }
+        .summary-bar {
+            background-color: #e8e8e8;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            gap: 10px;
+        }
+        .summary-bar h3 {
+            width: 100%;
+            text-align: center;
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        .summary-stat {
+            text-align: center;
+            padding: 8px 16px;
+            background-color: #fff;
+            border-radius: 6px;
+            min-width: 120px;
+        }
+        .summary-stat .stat-number {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #c0392b;
+        }
+        .summary-stat .stat-label {
+            font-size: 0.85em;
+            color: #666;
+        }
         .column-item {
             margin-bottom: 5px;
             display: flex;
@@ -62,6 +95,10 @@
         <img src="img/ChineseDude.png" alt="The Chinese Dude" style="height: 50px;">
     </h1>
     
+    <div class="summary-bar" id="summary-bar">
+        <h3>Directory Summary</h3>
+    </div>
+
     <div class="column-container" id="dynamic-columns">
         <!-- Columns will be dynamically populated here -->
     </div>
@@ -124,9 +161,26 @@
                 });
 
                 document.getElementById('dynamic-columns').appendChild(columnEl);
+                updateSummary(config.key, items.length);
             } catch (error) {
                 alert(`Error loading ${config.url+error}:`);
             }
+        }
+
+        function updateSummary(key, count) {
+            const summaryBar = document.getElementById('summary-bar');
+            const stat = document.createElement('div');
+            stat.className = 'summary-stat';
+
+            const labels = {
+                restaurants: 'Restaurants',
+                nannies: 'Nannies',
+                handymen: 'Handymen',
+                influencers: 'Influencers'
+            };
+
+            stat.innerHTML = `<div class="stat-number">${count}</div><div class="stat-label">${labels[key] || key}</div>`;
+            summaryBar.appendChild(stat);
         }
 
         // Load all columns
