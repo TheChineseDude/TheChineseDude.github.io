@@ -1,46 +1,214 @@
 {
     "influencers": [
         {
-            "name": "Steven He",
-            "category": "Comedy",
-            "youtube": "https://www.youtube.com/@StevenHe",
-            "x": "https://x.com/TheStevenHe"
-        },
-        {
             "name": "Alan Chikin Chow",
             "category": "Comedy/Entertainment",
             "youtube": "https://www.youtube.com/@AlanChikinChow",
-            "x": "https://x.com/AlanChikinChow"
+            "x": "https://x.com/AlanChikinChow",
+            "subscribers": "34M+"
         },
         {
-            "name": "The Fung Brothers",
-            "category": "Food/Culture",
-            "youtube": "https://www.youtube.com/user/FungBrosComedy",
-            "x": "https://x.com/fungbros"
+            "name": "ZHC (Zachary Hsieh)",
+            "category": "Art/Challenges",
+            "youtube": "https://www.youtube.com/@ZHC",
+            "x": "https://x.com/ZHC",
+            "subscribers": "25M+"
         },
         {
-            "name": "Xiran Jay Zhao",
-            "category": "Culture/History",
-            "youtube": "https://www.youtube.com/@XiranJayZhao",
-            "x": "https://x.com/XiranJayZhao"
+            "name": "Chloe Ting",
+            "category": "Fitness/Health",
+            "youtube": "https://www.youtube.com/@ChloeTing",
+            "x": "https://x.com/ChloeTing",
+            "subscribers": "24M+"
         },
         {
-            "name": "Linda Dong",
-            "category": "Comedy/Skits",
-            "youtube": "https://www.youtube.com/user/LeendaDProductions",
-            "x": "https://x.com/lindadong"
-        },
-        {
-            "name": "CantoMando",
-            "category": "Comedy/Culture",
-            "youtube": "https://www.youtube.com/@CantoMando",
-            "x": "https://x.com/CantoMando"
+            "name": "Steven He",
+            "category": "Comedy",
+            "youtube": "https://www.youtube.com/@StevenHe",
+            "x": "https://x.com/TheStevenHe",
+            "subscribers": "16M+"
         },
         {
             "name": "Wengie",
             "category": "Lifestyle/Music",
             "youtube": "https://www.youtube.com/@Wengie",
-            "x": "https://x.com/Wengie"
+            "x": "https://x.com/Wengie",
+            "subscribers": "13M+"
+        },
+        {
+            "name": "Uncle Roger (Nigel Ng)",
+            "category": "Comedy/Food",
+            "youtube": "https://www.youtube.com/@mrnigelng",
+            "x": "https://x.com/MrNigelNg",
+            "subscribers": "10M+"
+        },
+        {
+            "name": "JianHao Tan",
+            "category": "Comedy/Skits",
+            "youtube": "https://www.youtube.com/@JianHaoTan",
+            "x": "https://x.com/thejianhaotan",
+            "subscribers": "7M+"
+        },
+        {
+            "name": "Emi Wong",
+            "category": "Fitness/Wellness",
+            "youtube": "https://www.youtube.com/@EmiWong",
+            "x": "https://x.com/EmiWong_",
+            "subscribers": "6M+"
+        },
+        {
+            "name": "Mike Chen (Strictly Dumpling)",
+            "category": "Food/Travel",
+            "youtube": "https://www.youtube.com/@strictlydumpling",
+            "x": "https://x.com/strictlydumpling",
+            "subscribers": "4.3M+"
+        },
+        {
+            "name": "Disguised Toast",
+            "category": "Gaming/Entertainment",
+            "youtube": "https://www.youtube.com/@DisguisedToast",
+            "x": "https://x.com/DisguisedToast",
+            "subscribers": "4M+"
+        },
+        {
+            "name": "Wong Fu Productions",
+            "category": "Short Films/Comedy",
+            "youtube": "https://www.youtube.com/@WongFuProductions",
+            "x": "https://x.com/WongFuPro",
+            "subscribers": "3.5M+"
+        },
+        {
+            "name": "BubzBeauty (Lindy Tsang)",
+            "category": "Beauty/Lifestyle",
+            "youtube": "https://www.youtube.com/@bubzbeauty",
+            "x": "https://x.com/Bubzbeauty",
+            "subscribers": "3M+"
+        },
+        {
+            "name": "Tingting ASMR",
+            "category": "ASMR",
+            "youtube": "https://www.youtube.com/@TingtingASMR",
+            "x": "https://x.com/TingtingASMR",
+            "subscribers": "2.4M+"
+        },
+        {
+            "name": "Andrew Huang",
+            "category": "Music/Production",
+            "youtube": "https://www.youtube.com/@andrewhuang",
+            "x": "https://x.com/andrewhuang",
+            "subscribers": "2.2M+"
+        },
+        {
+            "name": "Jimmy O. Yang",
+            "category": "Comedy/Acting",
+            "youtube": "https://www.youtube.com/@JimmyOYang",
+            "x": "https://x.com/FunnyAsianDude",
+            "subscribers": "2M+"
+        },
+        {
+            "name": "The Fung Brothers",
+            "category": "Food/Culture",
+            "youtube": "https://www.youtube.com/user/FungBrosComedy",
+            "x": "https://x.com/fungbros",
+            "subscribers": "1.8M+"
+        },
+        {
+            "name": "Weylie Hoang",
+            "category": "Lifestyle/Beauty",
+            "youtube": "https://www.youtube.com/@weylie",
+            "x": "https://x.com/weylie",
+            "subscribers": "1.7M+"
+        },
+        {
+            "name": "Amber Liu",
+            "category": "Music/Lifestyle",
+            "youtube": "https://www.youtube.com/@AmberLiu",
+            "x": "https://x.com/llama_ajol",
+            "subscribers": "1M+"
+        },
+        {
+            "name": "Jimmy Zhang",
+            "category": "Comedy/Street Interviews",
+            "youtube": "https://www.youtube.com/@JimmyZhang",
+            "x": "https://x.com/JimmyZhang",
+            "subscribers": "1M+"
+        },
+        {
+            "name": "Wah!Banana",
+            "category": "Comedy/Skits",
+            "youtube": "https://www.youtube.com/@wahbanana",
+            "x": "https://x.com/wahbananasg",
+            "subscribers": "1M+"
+        },
+        {
+            "name": "Xiran Jay Zhao",
+            "category": "Culture/History",
+            "youtube": "https://www.youtube.com/@XiranJayZhao",
+            "x": "https://x.com/XiranJayZhao",
+            "subscribers": "700K+"
+        },
+        {
+            "name": "Linda Dong",
+            "category": "Comedy/Skits",
+            "youtube": "https://www.youtube.com/user/LeendaDProductions",
+            "x": "https://x.com/lindadong",
+            "subscribers": "600K+"
+        },
+        {
+            "name": "Vivian Aronson",
+            "category": "Food/Cooking",
+            "youtube": "https://www.youtube.com/@VivianAronson",
+            "x": "https://x.com/VivianAronson",
+            "subscribers": "600K+"
+        },
+        {
+            "name": "CantoMando",
+            "category": "Comedy/Culture",
+            "youtube": "https://www.youtube.com/@CantoMando",
+            "x": "https://x.com/CantoMando",
+            "subscribers": "500K+"
+        },
+        {
+            "name": "Brian Tong",
+            "category": "Tech/Reviews",
+            "youtube": "https://www.youtube.com/@BrianTong",
+            "x": "https://x.com/briantong",
+            "subscribers": "500K+"
+        },
+        {
+            "name": "Naomi Neo",
+            "category": "Beauty/Lifestyle",
+            "youtube": "https://www.youtube.com/@NaomiNeo",
+            "x": "https://x.com/naaborneo",
+            "subscribers": "500K+"
+        },
+        {
+            "name": "Chris Joe (CJ)",
+            "category": "Food/Home Cooking",
+            "youtube": "https://www.youtube.com/@ChrisJoeCooks",
+            "x": "https://x.com/chrisjoecooks",
+            "subscribers": "300K+"
+        },
+        {
+            "name": "Faye Tsui",
+            "category": "Beauty/Fashion",
+            "youtube": "https://www.youtube.com/@FayeTsui",
+            "x": "https://x.com/faborieday",
+            "subscribers": "300K+"
+        },
+        {
+            "name": "Goldthread",
+            "category": "Chinese Culture/Docs",
+            "youtube": "https://www.youtube.com/@Goldthread2",
+            "x": "https://x.com/Goldthread2",
+            "subscribers": "200K+"
+        },
+        {
+            "name": "Cassey Ho (Blogilates)",
+            "category": "Fitness/Pilates",
+            "youtube": "https://www.youtube.com/@blogilates",
+            "x": "https://x.com/blogilates",
+            "subscribers": "6M+"
         }
     ]
 }
