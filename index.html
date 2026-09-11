@@ -1,223 +1,123 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Chinese Dude</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 30px;
-        }
-        .column-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .column {
-            width: 100%;
-            background-color: #f4f4f4;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            box-sizing: border-box;
-        }
-        .column h2 {
-            text-align: center;
-            color: #555;
-            border-bottom: 2px solid #888;
-            padding-bottom: 10px;
-        }
-        .summary-bar {
-            background-color: #e8e8e8;
-            border-radius: 8px;
-            padding: 15px 20px;
-            margin-bottom: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: center;
-            gap: 10px;
-        }
-        .summary-bar h3 {
-            width: 100%;
-            text-align: center;
-            margin: 0 0 10px 0;
-            color: #333;
-        }
-        .summary-stat {
-            text-align: center;
-            padding: 8px 16px;
-            background-color: #fff;
-            border-radius: 6px;
-            min-width: 120px;
-        }
-        .summary-stat .stat-number {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #c0392b;
-        }
-        .summary-stat .stat-label {
-            font-size: 0.85em;
-            color: #666;
-        }
-        .column-item {
-            margin-bottom: 8px;
-            display: flex;
-            align-items: baseline;
-        }
-        .social-links {
-            margin-left: 6px;
-            font-size: 0.8em;
-        }
-        .social-links a {
-            text-decoration: none;
-            margin-left: 4px;
-            color: #c0392b;
-        }
-        .social-links a:hover {
-            text-decoration: underline;
-        }
-        .column-item-number {
-            font-weight: bold;
-            margin-right: 10px;
-            color: #666;
-        }
-        @media screen and (min-width: 768px) {
-            .column {
-                width: 45%;
-            }
-        }
-        @media screen and (min-width: 1024px) {
-            .column {
-                width: 22%;
-            }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Chinese Dude</title>
+<meta name="description" content="China, As You Wished. The ultimate China guide, from the Chinese dude. Site under construction.">
+<meta property="og:title" content="The Chinese Dude">
+<meta property="og:description" content="China, As You Wished. The ultimate China guide, from the Chinese dude.">
+<meta property="og:image" content="https://thechinesedude.com/wish/cover/cover_1920x1080.jpg">
+<meta property="og:url" content="https://thechinesedude.com/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="wish/assets/avatar.jpg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@1,600&family=Archivo:wght@400;700&display=swap">
+<style>
+  @font-face { font-family: "HongLei"; src: url("wish/assets/honglei_subset.woff2") format("woff2"), url("wish/assets/honglei_subset.otf") format("opentype"); font-display: swap; }
+  :root { --ink: #040A0E; --ink2: #081218; --cream: #FFF1E6; --gold: #FFD029; --jade: #00F5C0; --cinnabar: #FF3B1F; --muted: #93A9B2; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; background: var(--ink); }
+  body { font-family: Archivo, system-ui, sans-serif; color: var(--cream); -webkit-font-smoothing: antialiased; }
+
+  /* ---- hero: the opening card, fitted to the viewport width, never cropped ---- */
+  .hero { position: relative; width: 100vw; height: 56.25vw; max-height: 100vh; background: var(--ink); }
+  .hero iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
+  .hero .cue { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; color: var(--muted); font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; opacity: 0; animation: cuein 0.6s ease-out 2.2s forwards; pointer-events: none; }
+  .hero .cue i { display: block; width: 1px; height: 34px; background: linear-gradient(180deg, var(--gold), transparent); animation: drip 1.8s ease-in-out infinite; }
+  @keyframes cuein { to { opacity: 1; } }
+  @keyframes drip { 0%, 100% { transform: scaleY(0.4); transform-origin: top; opacity: 0.4; } 50% { transform: scaleY(1); opacity: 1; } }
+
+  /* ---- about ---- */
+  .about { position: relative; overflow: hidden; padding: clamp(72px, 10vw, 150px) 0 clamp(48px, 6vw, 88px); background: radial-gradient(1200px 600px at 12% 0%, rgba(255,208,41,0.07), transparent 60%), radial-gradient(900px 500px at 100% 100%, rgba(0,245,192,0.06), transparent 60%), linear-gradient(180deg, var(--ink) 0%, var(--ink2) 100%); }
+  .about::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,208,41,0.55) 30%, rgba(255,208,41,0.55) 70%, transparent); }
+  .wrap { position: relative; width: min(1180px, 88vw); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(32px, 6vw, 96px); align-items: start; }
+
+  .kicker { font-family: Anton, Impact, sans-serif; font-size: clamp(13px, 1.1vw, 16px); letter-spacing: 0.38em; text-transform: uppercase; color: var(--jade); margin: 0 0 22px; }
+  h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600; font-size: clamp(46px, 6.2vw, 104px); line-height: 0.98; letter-spacing: -0.01em; margin: 0 0 30px; color: var(--cream); text-shadow: 0 16px 50px rgba(0,0,0,0.45); }
+  h1 .plain { font-family: Anton, Impact, sans-serif; font-style: normal; font-weight: 400; font-size: 0.86em; letter-spacing: 0.01em; display: block; margin-bottom: 0.06em; }
+  .subrow { display: flex; align-items: center; gap: 18px; margin: 0 0 34px; }
+  .bar { width: 70px; height: 6px; background: var(--cinnabar); flex: 0 0 auto; }
+  .sub { font-weight: 700; font-size: clamp(12px, 1.05vw, 15px); letter-spacing: 0.2em; text-transform: uppercase; color: var(--cream); }
+  .body { max-width: 62ch; font-size: clamp(17px, 1.35vw, 20px); line-height: 1.6; color: rgba(255,241,230,0.82); margin: 0 0 18px; }
+  .body strong { color: var(--cream); font-weight: 700; }
+
+  .status { display: inline-flex; align-items: center; gap: 14px; margin-top: 26px; padding: 14px 22px 14px 18px; border: 1px solid rgba(0,245,192,0.45); border-radius: 999px; background: rgba(0,245,192,0.06); box-shadow: 0 0 40px rgba(0,245,192,0.12); }
+  .status .dot { position: relative; width: 10px; height: 10px; border-radius: 50%; background: var(--jade); box-shadow: 0 0 14px var(--jade); flex: 0 0 auto; }
+  .status .dot::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 1px solid var(--jade); animation: ping 1.8s cubic-bezier(0,0,0.2,1) infinite; }
+  @keyframes ping { 0% { transform: scale(0.6); opacity: 0.9; } 100% { transform: scale(1.9); opacity: 0; } }
+  .status b { font-family: Anton, Impact, sans-serif; font-weight: 400; font-size: 14px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--jade); }
+  .status span { font-size: 14px; letter-spacing: 0.06em; color: var(--muted); }
+
+  .side { display: flex; flex-direction: column; align-items: center; gap: 34px; padding-top: 6px; }
+  .avatar { width: clamp(120px, 12vw, 176px); height: clamp(120px, 12vw, 176px); border-radius: 50%; object-fit: cover; border: 5px solid var(--gold); box-shadow: 0 14px 40px rgba(0,0,0,0.55); }
+  .calli { writing-mode: vertical-rl; text-orientation: upright; font-family: HongLei, 'Ma Shan Zheng', serif; font-size: clamp(56px, 5.6vw, 92px); line-height: 1; color: var(--gold); text-shadow: 0 12px 44px rgba(0,0,0,0.65); letter-spacing: 0.08em; }
+  .calli span { display: inline-block; }
+
+  /* ---- footer ---- */
+  footer { border-top: 1px solid rgba(147,169,178,0.18); padding: 34px 0 44px; }
+  footer .row { width: min(1180px, 88vw); margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px 28px; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+  footer .row .zh { font-family: HongLei, 'Ma Shan Zheng', serif; font-size: 20px; letter-spacing: 0.3em; color: var(--gold); text-transform: none; }
+
+  /* ---- reveal on scroll ---- */
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(.2,.85,.2,1); }
+  .reveal.in { opacity: 1; transform: none; }
+  .reveal.d1 { transition-delay: 0.08s; } .reveal.d2 { transition-delay: 0.16s; } .reveal.d3 { transition-delay: 0.24s; } .reveal.d4 { transition-delay: 0.32s; } .reveal.d5 { transition-delay: 0.4s; }
+  .calli.reveal span { opacity: 0; transform: translateY(-18px); transition: opacity 0.5s ease-out, transform 0.5s ease-out; }
+  .calli.reveal.in span { opacity: 1; transform: none; }
+  .calli.reveal.in span:nth-child(1) { transition-delay: 0.30s; } .calli.reveal.in span:nth-child(2) { transition-delay: 0.45s; } .calli.reveal.in span:nth-child(3) { transition-delay: 0.60s; } .calli.reveal.in span:nth-child(4) { transition-delay: 0.75s; }
+
+  @media (max-width: 820px) {
+    .wrap { grid-template-columns: 1fr; }
+    .side { flex-direction: row; justify-content: flex-start; align-items: center; gap: 24px; order: -1; }
+    .calli { writing-mode: horizontal-tb; text-orientation: mixed; font-size: clamp(28px, 8.6vw, 40px); letter-spacing: 0.12em; white-space: nowrap; }
+    .status { flex-wrap: wrap; border-radius: 22px; }
+    .hero .cue { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal, .calli.reveal span { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .status .dot::after, .hero .cue i { animation: none; }
+  }
+</style>
 </head>
 <body>
-    <h1 style="display: flex; align-items: center; justify-content: center;">
-        <img src="img/cxk.gif" alt="Logo" style="height: 50px;">
-        <img src="img/ChineseDude.png" alt="The Chinese Dude" style="height: 50px;">
-    </h1>
-    
-    <div class="summary-bar" id="summary-bar">
-        <h3>Directory Summary</h3>
+
+<section class="hero">
+  <iframe src="wish/open.html" title="China, As You Wished." loading="eager"></iframe>
+  <div class="cue" aria-hidden="true"><i></i>scroll</div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div>
+      <p class="kicker reveal">About</p>
+      <h1 class="reveal d1"><span class="plain">Hi there,</span>I'm the Chinese dude.</h1>
+      <div class="subrow reveal d2"><div class="bar"></div><div class="sub">The ultimate China guide, from the Chinese dude.</div></div>
+      <p class="body reveal d3">I'm working on a <strong>China travel guide</strong>: the cities, the food, the routes, and the small things nobody tells you before you land. It starts with videos, and this site will grow into the full guide.</p>
+      <p class="body reveal d3">Until then, here's the title card. Enjoy the view.</p>
+      <div class="status reveal d4"><span class="dot"></span><b>Site under construction</b><span>New episodes and the full guide are on the way.</span></div>
     </div>
+    <aside class="side">
+      <img class="avatar reveal d2" src="wish/assets/avatar.jpg" alt="The Chinese Dude">
+      <div class="calli reveal" aria-label="如你所愿"><span>如</span><span>你</span><span>所</span><span>愿</span></div>
+    </aside>
+  </div>
+</section>
 
-    <div class="column-container" id="dynamic-columns">
-        <!-- Columns will be dynamically populated here -->
-    </div>
+<footer>
+  <div class="row">
+    <div>&copy; 2026 The Chinese Dude</div>
+    <div class="zh">如你所愿</div>
+    <div>China, As You Wished.</div>
+  </div>
+</footer>
 
-    <script>
-        // Configuration for JSON file paths
-        const configs = [
-            { 
-                url: 'data/restaurants.json', 
-                title: 'Best Chinese Restaurants in North America',
-                key: 'restaurants'
-            },
-            { 
-                url: 'data/nannies.json', 
-                title: 'Top Rated Chinese Nannies in North America',
-                key: 'nannies'
-            },
-            { 
-                url: 'data/handymen.json', 
-                title: 'Top Rated Chinese Handymen in North America',
-                key: 'handymen'
-            },
-            {
-                url: 'data/influencers.json',
-                title: 'Top Chinese Influencers (English-Speaking)',
-                key: 'influencers'
-            },
-            {
-                url: 'data/influencers_cn.json',
-                title: '北美华人网红 (中文频道)',
-                key: 'influencers_cn'
-            }
-        ];
-
-        async function loadColumn(config) {
-            try {
-                const response = await fetch(config.url);
-                const data = await response.json();
-                const items = data[config.key];
-
-                const columnEl = document.createElement('div');
-                columnEl.className = 'column';
-                
-                const titleEl = document.createElement('h2');
-                titleEl.textContent = config.title;
-                columnEl.appendChild(titleEl);
-
-                items.forEach((item, index) => {
-                    const itemEl = document.createElement('div');
-                    itemEl.className = 'column-item';
-                    
-                    const numberEl = document.createElement('span');
-                    numberEl.className = 'column-item-number';
-                    numberEl.textContent = `${index + 1}.`;
-                    
-                    let displayText;
-                    if (config.key === 'influencers') {
-                        displayText = `${item.name} (${item.category})`;
-                    } else if (config.key === 'influencers_cn') {
-                        displayText = `${item.name} (${item.category}) - ${item.subscribers}`;
-                    } else {
-                        displayText = `${item.name} (${item.location})`;
-                    }
-                    const textEl = document.createTextNode(displayText);
-
-                    itemEl.appendChild(numberEl);
-                    itemEl.appendChild(textEl);
-
-                    if ((config.key === 'influencers' || config.key === 'influencers_cn') && (item.youtube || item.x)) {
-                        const linksEl = document.createElement('span');
-                        linksEl.className = 'social-links';
-                        let links = [];
-                        if (item.youtube) links.push(`<a href="${item.youtube}" target="_blank" rel="noopener">YT</a>`);
-                        if (item.x) links.push(`<a href="${item.x}" target="_blank" rel="noopener">X</a>`);
-                        linksEl.innerHTML = links.join(' ');
-                        itemEl.appendChild(linksEl);
-                    }
-                    columnEl.appendChild(itemEl);
-                });
-
-                document.getElementById('dynamic-columns').appendChild(columnEl);
-                updateSummary(config.key, items.length);
-            } catch (error) {
-                alert(`Error loading ${config.url+error}:`);
-            }
-        }
-
-        function updateSummary(key, count) {
-            const summaryBar = document.getElementById('summary-bar');
-            const stat = document.createElement('div');
-            stat.className = 'summary-stat';
-
-            const labels = {
-                restaurants: 'Restaurants',
-                nannies: 'Nannies',
-                handymen: 'Handymen',
-                influencers: 'Influencers (EN)',
-                influencers_cn: '网红 (中文)'
-            };
-
-            stat.innerHTML = `<div class="stat-number">${count}</div><div class="stat-label">${labels[key] || key}</div>`;
-            summaryBar.appendChild(stat);
-        }
-
-        // Load all columns
-        configs.forEach(loadColumn);
-    </script>
+<script>
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }, { threshold: 0.18 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
 </body>
 </html>
