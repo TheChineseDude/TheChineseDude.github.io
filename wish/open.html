@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>China As You Wished - The Chinese Dude</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@1,600&family=Archivo:wght@700&display=swap">
+<style>
+  @font-face { font-family: "HongLei"; src: url("assets/honglei_subset.woff2") format("woff2"), url("assets/honglei_subset.otf") format("opentype"); font-display: block; }
+  :root { --ink: #040A0E; --cream: #FFF1E6; --gold: #FFD029; --star: #FFDE00; --jade: #00F5C0; --cinnabar: #FF3B1F; --muted: #93A9B2; }
+  html, body { margin: 0; background: var(--ink); }
+  body { font-family: Archivo, system-ui, sans-serif; color: var(--cream); overflow: hidden; }
+  /* the 1920×1080 stage; web mode scales it to the viewport, video/still modes leave it 1:1 */
+  #wrap { position: relative; width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; }
+  #stage { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: var(--ink); flex: 0 0 auto; transform-origin: center center; }
+  body.video #wrap, body.still #wrap { width: 1920px; height: 1080px; }
+  .bg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; filter: brightness(0.82) saturate(1.1); transform: scale(1.06); }
+  .go .bg { animation: bgzoom 8s linear forwards; }
+  @keyframes bgzoom { from { transform: scale(1.06); } to { transform: scale(1.0); } }
+  .shade1 { position: absolute; inset: 0; background: linear-gradient(95deg, rgba(4,10,14,0.94) 0%, rgba(4,10,14,0.74) 42%, rgba(4,10,14,0.12) 100%); }
+  .shade2 { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(4,10,14,0.82) 0%, rgba(4,10,14,0) 45%); }
+
+  .wm { position: absolute; left: 120px; top: 84px; width: 300px; opacity: 0; transform-origin: 50% 50%; }
+  .avatar { position: absolute; left: 433px; top: 77px; width: 176px; height: 176px; border-radius: 50%; object-fit: cover; border: 5px solid var(--gold); box-sizing: border-box; box-shadow: 0 14px 40px rgba(0,0,0,0.55); opacity: 0; }
+  .go .wm { animation: stamp 0.42s cubic-bezier(.2,1.25,.3,1) 0.05s forwards; }
+  .go .avatar { animation: stamp 0.42s cubic-bezier(.2,1.25,.3,1) 0.16s forwards; }
+  @keyframes stamp { 0% { opacity: 0; transform: scale(1.5) rotate(-6deg); } 60% { opacity: 1; transform: scale(0.96) rotate(0deg); } 100% { opacity: 1; transform: none; } }
+
+  .col { position: absolute; left: 120px; top: 318px; display: flex; flex-direction: column; gap: 10px; }
+  .kicker { font-family: Anton, Impact, sans-serif; font-size: 28px; letter-spacing: 0.38em; text-transform: uppercase; color: var(--jade); margin-bottom: 10px; opacity: 0; transform: translateY(14px); }
+  .go .kicker { animation: fadeup 0.35s ease-out 0.28s forwards; }
+  @keyframes fadeup { to { opacity: 1; transform: none; } }
+  .line { overflow: hidden; padding-bottom: 0.06em; margin-bottom: -0.06em; }
+  .t1.line { padding-top: 70px; margin-top: -70px; }  /* headroom so the gold star above the i is not clipped */
+  .line > span { display: block; transform: translateY(110%); }
+  .t1 { font-family: Anton, Impact, sans-serif; font-size: 236px; line-height: 0.9; color: var(--cream); text-shadow: 0 16px 50px rgba(0,0,0,0.45); }
+  .t2 { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600; font-size: 186px; line-height: 0.95; letter-spacing: -0.01em; color: var(--cream); margin-left: 6px; }
+  .go .t1 > span { animation: rise 0.5s cubic-bezier(.2,.85,.2,1) 0.3s forwards; }
+  .go .t2 > span { animation: rise 0.5s cubic-bezier(.2,.85,.2,1) 0.46s forwards; }
+  @keyframes rise { to { transform: translateY(0); } }
+  .istar { position: relative; display: inline-block; }
+  .istar svg { position: absolute; left: 26px; top: -40px; width: 101px; height: 72px; transform: translateX(-50%) scale(0); overflow: visible; transform-origin: 50% 60%; }
+  .go .istar svg { animation: starpop 0.38s cubic-bezier(.2,1.4,.3,1) 0.62s forwards; }
+  @keyframes starpop { 0% { transform: translateX(-50%) scale(0) rotate(-40deg); } 100% { transform: translateX(-50%) scale(1) rotate(0deg); } }
+  .subrow { display: flex; align-items: center; gap: 18px; margin-top: 26px; }
+  .bar { width: 0; height: 8px; background: var(--cinnabar); flex: 0 0 auto; }
+  .go .bar { animation: grow 0.35s cubic-bezier(.2,.85,.2,1) 0.72s forwards; }
+  @keyframes grow { to { width: 70px; } }
+  .sub { font-family: Archivo, sans-serif; font-weight: 700; font-size: 30px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cream); white-space: nowrap; opacity: 0; transform: translateY(10px); }
+  .go .sub { animation: fadeup 0.35s ease-out 0.8s forwards; }
+  .small { font-family: Archivo, sans-serif; font-weight: 700; font-size: 24px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-left: 88px; opacity: 0; transform: translateY(10px); }
+  .go .small { animation: fadeup 0.35s ease-out 0.9s forwards; }
+
+  .calli { position: absolute; right: 150px; top: 80px; height: 900px; writing-mode: vertical-rl; text-orientation: upright; font-family: HongLei, 'Ma Shan Zheng', serif; font-size: 150px; line-height: 1; color: var(--gold); text-shadow: 0 12px 44px rgba(0,0,0,0.65); }
+  .calli span { display: inline-block; opacity: 0; transform: translateY(-24px); }
+  .go .calli span:nth-child(1) { animation: ink 0.4s ease-out 0.4s forwards; }
+  .go .calli span:nth-child(2) { animation: ink 0.4s ease-out 0.55s forwards; }
+  .go .calli span:nth-child(3) { animation: ink 0.4s ease-out 0.7s forwards; }
+  .go .calli span:nth-child(4) { animation: ink 0.4s ease-out 0.85s forwards; }
+  @keyframes ink { to { opacity: 1; transform: none; } }
+
+  #fade { position: absolute; inset: 0; background: #000; opacity: 0; pointer-events: none; }
+  .out #fade { animation: toblack 0.6s ease-in forwards; }
+  @keyframes toblack { to { opacity: 1; } }
+
+  /* still mode: every element in its final state, no motion */
+  .still * { animation: none !important; }
+  .still .bg { transform: none; }
+  .still .wm, .still .avatar, .still .kicker, .still .sub, .still .small, .still .calli span { opacity: 1 !important; transform: none !important; }
+  .still .line > span { transform: none !important; }
+  .still .istar svg { transform: translateX(-50%) scale(1) !important; }
+  .still .bar { width: 70px; }
+</style>
+</head>
+<body>
+<div id="wrap">
+<div id="stage">
+  <img class="bg" id="bgimg" src="assets/bg_huangshan_1920.jpg" alt="">
+  <div class="shade1"></div><div class="shade2"></div>
+
+  <img class="wm" src="assets/wm_dark.png" alt="The Chinese Dude">
+  <img class="avatar" src="assets/avatar.jpg" alt="The Chinese Dude">
+
+  <div class="col">
+    <div class="kicker">The Chinese Dude presents</div>
+    <div class="line t1"><span>Ch<span class="istar">ı<svg viewBox="0 0 100 100"><path d="M50 4 L62 37 L97 37 L69 58 L80 92 L50 72 L20 92 L31 58 L3 37 L38 37 Z" fill="#FFDE00"/></svg></span>na,</span></div>
+    <div class="line t2"><span>As You Wished.</span></div>
+    <div class="subrow"><div class="bar"></div><div class="sub">The ultimate China guide, from the Chinese dude.</div></div>
+    <div class="small">如愿 · an English cover</div>
+  </div>
+
+  <div class="calli"><span>如</span><span>你</span><span>所</span><span>愿</span></div>
+  <div id="fade"></div>
+</div>
+</div>
+<script>
+  const params = new URLSearchParams(location.search);
+  const mode = params.get('mode') || 'web';          // web | video | still
+  const HOLD = parseFloat(params.get('hold') || '6.4'); // video mode: seconds until the fade to black
+  document.body.classList.add(mode);
+  const stage = document.getElementById('stage');
+
+  function fit() {
+    if (mode !== 'web') return;
+    const s = Math.min(innerWidth / 1920, innerHeight / 1080);
+    stage.style.transform = 'scale(' + s + ')';
+  }
+  addEventListener('resize', fit); fit();
+
+  async function start() {
+    const fonts = [document.fonts.load('400 236px Anton'), document.fonts.load('italic 600 186px "Cormorant Garamond"'),
+                   document.fonts.load('700 30px Archivo'), document.fonts.load('150px HongLei')];
+    let ready = Promise.resolve();
+    if (mode === 'video') {
+      // swap the still for the moving footage and wait until it can play through
+      const v = document.createElement('video');
+      v.className = 'bg'; v.muted = true; v.playsInline = true; v.preload = 'auto'; v.src = params.get('bg') || 'bg_intro.mp4';
+      const img = document.getElementById('bgimg'); img.replaceWith(v);
+      ready = new Promise(r => v.readyState >= 3 ? r() : v.addEventListener('canplaythrough', r, { once: true }));
+      await Promise.all([...fonts, ready]);
+      await v.play();
+    } else {
+      await Promise.all(fonts);
+    }
+    if (mode === 'still') return;
+    document.body.classList.add('go');
+    window.__t0 = performance.now();
+    if (mode === 'video') setTimeout(() => document.body.classList.add('out'), HOLD * 1000);
+  }
+  start();
+</script>
+</body>
+</html>

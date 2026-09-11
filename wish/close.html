@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>See you on the next trip - The Chinese Dude</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@1,600&family=Archivo:wght@700&display=swap">
+<style>
+  @font-face { font-family: "HongLei"; src: url("assets/honglei_subset.woff2") format("woff2"), url("assets/honglei_subset.otf") format("opentype"); font-display: block; }
+  :root { --ink: #040A0E; --cream: #FFF1E6; --gold: #FFD029; --jade: #00F5C0; --cinnabar: #FF3B1F; --muted: #93A9B2; }
+  html, body { margin: 0; background: var(--ink); }
+  body { font-family: Archivo, system-ui, sans-serif; color: var(--cream); overflow: hidden; }
+  #wrap { position: relative; width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; }
+  #stage { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: var(--ink); flex: 0 0 auto; transform-origin: center center; }
+  body.video #wrap, body.still #wrap { width: 1920px; height: 1080px; }
+  .bg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; filter: brightness(0.72) saturate(1.05); }
+  .shade1 { position: absolute; inset: 0; background: linear-gradient(95deg, rgba(4,10,14,0.94) 0%, rgba(4,10,14,0.76) 42%, rgba(4,10,14,0.18) 100%); }
+  .shade2 { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(4,10,14,0.9) 0%, rgba(4,10,14,0) 50%); }
+
+  .brand { position: absolute; left: 120px; top: 96px; display: flex; align-items: center; gap: 34px; }
+  .wm { width: 520px; display: block; opacity: 0; }
+  .avatar { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 5px solid var(--gold); box-sizing: border-box; box-shadow: 0 14px 40px rgba(0,0,0,0.55); opacity: 0; }
+  .go .wm { animation: stamp 0.42s cubic-bezier(.2,1.25,.3,1) 0.05s forwards; }
+  .go .avatar { animation: stamp 0.42s cubic-bezier(.2,1.25,.3,1) 0.18s forwards; }
+  @keyframes stamp { 0% { opacity: 0; transform: scale(1.5) rotate(-6deg); } 60% { opacity: 1; transform: scale(0.96) rotate(0deg); } 100% { opacity: 1; transform: none; } }
+
+  .col { position: absolute; left: 120px; top: 470px; display: flex; flex-direction: column; gap: 10px; }
+  .kicker { font-family: Anton, Impact, sans-serif; font-size: 28px; letter-spacing: 0.38em; text-transform: uppercase; color: var(--jade); margin-bottom: 8px; opacity: 0; transform: translateY(14px); }
+  .go .kicker { animation: fadeup 0.35s ease-out 0.3s forwards; }
+  @keyframes fadeup { to { opacity: 1; transform: none; } }
+  .line { overflow: hidden; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+  .line > span { display: block; transform: translateY(110%); }
+  .t2 { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600; font-size: 150px; line-height: 0.95; letter-spacing: -0.01em; color: var(--cream); }
+  .go .t2 > span { animation: rise 0.5s cubic-bezier(.2,.85,.2,1) 0.38s forwards; }
+  @keyframes rise { to { transform: translateY(0); } }
+  .subrow { display: flex; align-items: center; gap: 18px; margin-top: 26px; }
+  .bar { width: 0; height: 8px; background: var(--cinnabar); flex: 0 0 auto; }
+  .go .bar { animation: grow 0.35s cubic-bezier(.2,.85,.2,1) 0.66s forwards; }
+  @keyframes grow { to { width: 70px; } }
+  .sub { font-family: Archivo, sans-serif; font-weight: 700; font-size: 30px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cream); white-space: nowrap; opacity: 0; transform: translateY(10px); }
+  .go .sub { animation: fadeup 0.35s ease-out 0.74s forwards; }
+  .cta { display: flex; align-items: center; gap: 22px; margin-left: 88px; margin-top: 12px; }
+  .pill { font-family: Anton, Impact, sans-serif; font-size: 26px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink); background: var(--jade); padding: 12px 30px; border-radius: 999px; box-shadow: 0 0 36px rgba(0,245,192,0.45); opacity: 0; transform: scale(0.6); }
+  .go .pill { animation: pop 0.4s cubic-bezier(.2,1.3,.3,1) 0.84s forwards; }
+  @keyframes pop { to { opacity: 1; transform: none; } }
+  .more { font-family: Archivo, sans-serif; font-weight: 700; font-size: 24px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); opacity: 0; transform: translateY(10px); }
+  .go .more { animation: fadeup 0.35s ease-out 0.96s forwards; }
+
+  .calli { position: absolute; right: 150px; top: 80px; height: 900px; writing-mode: vertical-rl; text-orientation: upright; font-family: HongLei, 'Ma Shan Zheng', serif; font-size: 150px; line-height: 1; color: var(--gold); text-shadow: 0 12px 44px rgba(0,0,0,0.65); }
+  .calli span { display: inline-block; opacity: 0; transform: translateY(-24px); }
+  .go .calli span:nth-child(1) { animation: ink 0.4s ease-out 0.4s forwards; }
+  .go .calli span:nth-child(2) { animation: ink 0.4s ease-out 0.55s forwards; }
+  .go .calli span:nth-child(3) { animation: ink 0.4s ease-out 0.7s forwards; }
+  .go .calli span:nth-child(4) { animation: ink 0.4s ease-out 0.85s forwards; }
+  @keyframes ink { to { opacity: 1; transform: none; } }
+
+  #fade { position: absolute; inset: 0; background: #000; opacity: 0; pointer-events: none; }
+  .out #fade { animation: toblack 1.2s ease-in forwards; }
+  @keyframes toblack { to { opacity: 1; } }
+
+  .still * { animation: none !important; }
+  .still .wm, .still .avatar, .still .kicker, .still .sub, .still .more, .still .calli span { opacity: 1 !important; transform: none !important; }
+  .still .pill { opacity: 1 !important; transform: none !important; }
+  .still .line > span { transform: none !important; }
+  .still .bar { width: 70px; }
+</style>
+</head>
+<body>
+<div id="wrap">
+<div id="stage">
+  <img class="bg" id="bgimg" src="assets/bg_greatwall_1920.jpg" alt="">
+  <div class="shade1"></div><div class="shade2"></div>
+
+  <div class="brand">
+    <img class="wm" src="assets/wm_dark.png" alt="The Chinese Dude">
+    <img class="avatar" src="assets/avatar.jpg" alt="The Chinese Dude">
+  </div>
+
+  <div class="col">
+    <div class="kicker">Thanks for watching</div>
+    <div class="line t2"><span>See you on the next trip.</span></div>
+    <div class="subrow"><div class="bar"></div><div class="sub">The ultimate China guide, from the Chinese dude.</div></div>
+    <div class="cta"><div class="pill">Subscribe</div><div class="more">More episodes coming</div></div>
+  </div>
+
+  <div class="calli"><span>如</span><span>你</span><span>所</span><span>愿</span></div>
+  <div id="fade"></div>
+</div>
+</div>
+<script>
+  const params = new URLSearchParams(location.search);
+  const mode = params.get('mode') || 'web';
+  const HOLD = parseFloat(params.get('hold') || '15.6');
+  document.body.classList.add(mode);
+  const stage = document.getElementById('stage');
+  function fit() { if (mode !== 'web') return; const s = Math.min(innerWidth / 1920, innerHeight / 1080); stage.style.transform = 'scale(' + s + ')'; }
+  addEventListener('resize', fit); fit();
+  async function start() {
+    const fonts = [document.fonts.load('400 28px Anton'), document.fonts.load('italic 600 150px "Cormorant Garamond"'),
+                   document.fonts.load('700 30px Archivo'), document.fonts.load('150px HongLei')];
+    let ready = Promise.resolve();
+    if (mode === 'video') {
+      const v = document.createElement('video');
+      v.className = 'bg'; v.muted = true; v.playsInline = true; v.preload = 'auto'; v.src = params.get('bg') || 'bg_outro.mp4';
+      document.getElementById('bgimg').replaceWith(v);
+      ready = new Promise(r => v.readyState >= 3 ? r() : v.addEventListener('canplaythrough', r, { once: true }));
+      await Promise.all([...fonts, ready]);
+      await v.play();
+    } else {
+      await Promise.all(fonts);
+    }
+    if (mode === 'still') return;
+    document.body.classList.add('go');
+    window.__t0 = performance.now();
+    if (mode === 'video') setTimeout(() => document.body.classList.add('out'), HOLD * 1000);
+  }
+  start();
+</script>
+</body>
+</html>
